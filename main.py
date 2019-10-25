@@ -6,7 +6,7 @@ def main():
         img = Image.open(f'input_images/{i}')
         img = face(img)
         img = hands(img)
-        img = nuke(img, 5)
+        img = nuke(img, 100)
         img.save(f'output_images/{i}', 'JPEG')
 
 def face(img):
