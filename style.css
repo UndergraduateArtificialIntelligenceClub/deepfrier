@@ -1,0 +1,14 @@
+img {
+  width: 100%;
+}
+
+#display {
+  position: relative;
+}
+
+#display canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/*# sourceMappingURL=style.css.map */
