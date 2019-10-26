@@ -12,7 +12,7 @@
         <script src="df.js" defer></script>
     </head>
     <body>
-        <input type="file" name="" id="input_image">
+        <input type="file" name="" id="input_image" accept="image/*" onchange="faceDetection(loadImage())">
         <img src="face.png" alt="face emoji" id="face-emoji">
         <div id="display">
             <!-- you can change src to be whatever image you want for now-->

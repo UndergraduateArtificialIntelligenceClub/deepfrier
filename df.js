@@ -1,4 +1,4 @@
-// const img = document.getElementById("input_image");
+const fileInput = document.getElementById("input_image");
 const img = document.getElementById("img");
 
 function filter() {
@@ -25,21 +25,21 @@ function drawEmojis(detections, displayInfo) {
     }
 }
 
-async function faceDetection() {
+async function faceDetection(image) {
     Promise.all([
         //loads face detection model
         faceapi.nets.tinyFaceDetector.loadFromUri('/models')
     ]).then(async function () {
         // adds canvas to <div id="display"></div>
-        const canvas = faceapi.createCanvasFromMedia(img);
+        const canvas = faceapi.createCanvasFromMedia(image);
         document.getElementById('display').append(canvas);
 
         // gives the dimensions of the image to scan
-        const displaySize = {width: img.width, height: img.height};
+        const displaySize = {width: image.width, height: image.height};
         faceapi.matchDimensions(canvas, displaySize);
 
         // runs detection algorithm
-        const detections = await faceapi.detectAllFaces(img, new faceapi.TinyFaceDetectorOptions());
+        const detections = await faceapi.detectAllFaces(image, new faceapi.TinyFaceDetectorOptions());
 
         // array of the results
         const displayResults = faceapi.resizeResults(detections, displaySize);
@@ -47,10 +47,32 @@ async function faceDetection() {
         // selects the canvas context and draws on it
         const ctx = canvas.getContext('2d');
         //draws the image that was scaned
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
         // draws the crying laughing emojis
         drawEmojis(detections, displayResults);
     });
 }
 
-faceDetection();
+function loadImage() {
+    // get rid of old canvas
+    const canvas = document.querySelector("canvas")
+    if (canvas != null) {
+        canvas.outerHTML = "";
+    }
+
+    const container = document.getElementById("display");
+    const file = fileInput.files[0];
+
+    if (fileInput.files.length == 0) {
+        // if user did not select a file:
+        // will print out message
+        let para = document.createElement('p');
+        para.innerHTML = "No file was selected for upload 😥";
+        container.appendChild(para);
+    } else {
+        // if user selected file:
+        // will replace the img tag that faceDetection runs off
+        img.src = window.URL.createObjectURL(file);
+    }
+    return img;
+}
