@@ -28,7 +28,7 @@ function drawEmojis(detections, displayInfo) {
 async function faceDetection(image) {
     Promise.all([
         //loads face detection model
-        faceapi.nets.tinyFaceDetector.loadFromUri('/models')
+        faceapi.nets.tinyFaceDetector.loadFromUri('models/')
     ]).then(async function () {
         // to add: loading animation here
 

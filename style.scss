@@ -45,14 +45,14 @@ h1 {
     color: white;
     box-sizing: border-box;
     box-shadow: 0 0 1rem rgba(black, 0.5);
+}
 
-    #dark-mode-toggle {
-        width: 2rem;
-        height: 2rem;
-        position: absolute;
-        right: 1rem;
-        cursor: pointer;
-    }
+#dark-mode-toggle {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
 }
 
 main {
