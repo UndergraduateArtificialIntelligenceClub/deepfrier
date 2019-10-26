@@ -1,24 +1,25 @@
 const toggler = document.getElementById("dark-mode-toggle");
 let mode = localStorage.getItem('darkMode');
 
-function toggle(bool) {
-    if (bool) {
-        document.body.classList.remove('darkmode');
-    } else {
-        document.body.classList.add('darkmode')
-    }
+const enableDarkMode = () => {
+    document.body.classList.add('darkmode');
+    localStorage.setItem('darkMode', true);
+}
+
+const disableDarkMode = () => {
+    document.body.classList.remove('darkmode');
+    localStorage.setItem('darkMode', null);
+}
+
+if (mode == 'true') {
+    enableDarkMode();
 }
 
 toggler.addEventListener('click', () => {
-    // mode = localStorage.darkmode;
-    console.table(mode);
-    if (mode) {
-        mode = false;
+    mode = localStorage.getItem('darkMode');
+    if (mode == 'true') {
+        disableDarkMode();
     } else {
-        mode = true;
+        enableDarkMode();
     }
-    localStorage.darkmode = mode;
-    toggle(mode);
 });
-
-toggle(mode);

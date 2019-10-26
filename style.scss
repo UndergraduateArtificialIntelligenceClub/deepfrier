@@ -47,7 +47,6 @@ h1 {
     box-shadow: 0 0 1rem rgba(black, 0.5);
 
     #dark-mode-toggle {
-        display: inline;
         width: 2rem;
         height: 2rem;
         position: absolute;
@@ -92,7 +91,7 @@ main {
 }
 
 .darkmode {
-    --background: rgb(44, 44, 44);
+    --background: rgb(49, 49, 49);
     --color: white;
     --link: rgb(58, 58, 255);
 }
