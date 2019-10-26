@@ -61,6 +61,7 @@ function loadImage() {
     }
 
     const container = document.getElementById("display");
+    // only one file will be uploaded
     const file = fileInput.files[0];
 
     if (fileInput.files.length == 0) {
@@ -74,5 +75,7 @@ function loadImage() {
         // will replace the img tag that faceDetection runs off
         img.src = window.URL.createObjectURL(file);
     }
+
+    // returns img element so function can be used as arg in faceDetection()
     return img;
 }
