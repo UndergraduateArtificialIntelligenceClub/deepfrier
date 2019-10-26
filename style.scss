@@ -2,6 +2,9 @@
 
 :root {
     --width-perc: 50%;
+    --background: white;
+    --color: black;
+    --link: rgb(16, 16, 250);
 }
 
 @mixin center {
@@ -12,6 +15,9 @@
 
 body {
     margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--color);
     font-family: 'Raleway', 'Open Sans', sans-serif;
 
     & > p {
@@ -22,10 +28,10 @@ body {
         margin-bottom: $marg;
 
         a, a:visited {
-            color: blue;
+            color: var(--link);
 
             &:active {
-                color: purple;
+                color: rgb(142, 28, 218);
             }
         }
     }
@@ -39,6 +45,12 @@ h1 {
     color: white;
     box-sizing: border-box;
     box-shadow: 0 0 1rem rgba(black, 0.5);
+
+    #dark-mode {
+        display: inline;
+        width: 2rem;
+        height: 2rem;
+    }
 }
 
 main {
@@ -73,6 +85,12 @@ main {
     #img {
         width: 100%;
     }
+}
+
+.darkmode {
+    --background: rgb(44, 44, 44);
+    --color: white;
+    --link: rgb(58, 58, 255);
 }
 
 @media only screen and (max-width: 600px) {

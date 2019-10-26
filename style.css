@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap&subset=latin-ext");
 :root {
   --width-perc: 50%;
+  --background: white;
+  --color: black;
+  --link: rgb(16, 16, 250);
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--color);
   font-family: 'Raleway', 'Open Sans', sans-serif;
 }
 
@@ -18,11 +24,11 @@ body > p {
 }
 
 body > p a, body > p a:visited {
-  color: blue;
+  color: var(--link);
 }
 
 body > p a:active, body > p a:visited:active {
-  color: purple;
+  color: #8e1cda;
 }
 
 h1 {
@@ -35,6 +41,12 @@ h1 {
           box-sizing: border-box;
   -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+h1 #dark-mode {
+  display: inline;
+  width: 2rem;
+  height: 2rem;
 }
 
 main {
@@ -74,6 +86,12 @@ main {
 
 #display #img {
   width: 100%;
+}
+
+.darkmode {
+  --background: rgb(44, 44, 44);
+  --color: white;
+  --link: rgb(58, 58, 255);
 }
 
 @media only screen and (max-width: 600px) {
