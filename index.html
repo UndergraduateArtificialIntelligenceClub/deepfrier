@@ -12,11 +12,16 @@
         <script src="df.js" defer></script>
     </head>
     <body>
-        <input type="file" name="" id="input_image" accept="image/*" onchange="faceDetection(loadImage())">
-        <img src="face.png" alt="face emoji" id="face-emoji">
-        <div id="display">
-            <p id="pre-upload-message">U🅱load an image 😂👌</p>
-            <img src="" alt="" id="img">
-        </div>
+        <h1>Deepfrier.js 🅱 😂</h1>
+        <p>This meme deepfrier uses Machine Learning to find the location of faces and hands and superimposes the corresponding emoji.</p>
+        <p>To learn more, go take a look at the <a  href="http://github.com/UndergraduateArtificialIntelligenceClub/deepfrier" target="blank">GitHub repository</a>.</p>
+        <main>
+            <p>Upload a picture with a face!</p>
+            <input type="file" name="" id="input-image" accept="image/*" onchange="faceDetection(loadImage())">
+            <img src="face.png" alt="face emoji" id="face-emoji">
+            <div id="display">
+                <img src="" alt="" id="img">
+            </div>
+        </main>
     </body>
 </html>

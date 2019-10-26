@@ -1,4 +1,4 @@
-const fileInput = document.getElementById("input_image");
+const fileInput = document.getElementById("input-image");
 const img = document.getElementById("img");
 
 function filter() {
@@ -30,6 +30,8 @@ async function faceDetection(image) {
         //loads face detection model
         faceapi.nets.tinyFaceDetector.loadFromUri('/models')
     ]).then(async function () {
+        // to add: loading animation here
+
         // adds canvas to <div id="display"></div>
         const canvas = faceapi.createCanvasFromMedia(image);
         document.getElementById('display').append(canvas);
