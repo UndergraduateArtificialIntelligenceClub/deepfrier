@@ -54,10 +54,14 @@ async function faceDetection(image) {
 }
 
 function loadImage() {
-    // get rid of old canvas
+    // get rid of old canvas and upload message
     const canvas = document.querySelector("canvas")
-    if (canvas != null) {
+    const uploadMessage = document.getElementById("pre-upload-message");
+    if (canvas) {
         canvas.outerHTML = "";
+    }
+    if (uploadMessage) {
+        uploadMessage.outerHTML = "";
     }
 
     const container = document.getElementById("display");
@@ -68,7 +72,7 @@ function loadImage() {
         // if user did not select a file:
         // will print out message
         let para = document.createElement('p');
-        para.innerHTML = "No file was selected for upload 😥";
+        para.innerHTML = "No image was uploaded 😥";
         container.appendChild(para);
     } else {
         // if user selected file:
