@@ -1,5 +1,17 @@
+body {
+  margin: 0;
+}
+
+#input_image {
+  margin: auto auto;
+}
+
 img {
   width: 100%;
+}
+
+#face-emoji {
+  display: none;
 }
 
 #display {
@@ -10,5 +22,9 @@ img {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: saturate(500%) contrast(500%);
+          filter: saturate(500%) contrast(500%);
 }
 /*# sourceMappingURL=style.css.map */
