@@ -27,20 +27,29 @@ function drawEmojis(detections, displayInfo) {
 
 async function faceDetection() {
     Promise.all([
+        //loads face detection model
         faceapi.nets.tinyFaceDetector.loadFromUri('/models')
     ]).then(async function () {
+        // adds canvas to <div id="display"></div>
         const canvas = faceapi.createCanvasFromMedia(img);
         document.getElementById('display').append(canvas);
+
+        // gives the dimensions of the image to scan
         const displaySize = {width: img.width, height: img.height};
         faceapi.matchDimensions(canvas, displaySize);
+
+        // runs detection algorithm
         const detections = await faceapi.detectAllFaces(img, new faceapi.TinyFaceDetectorOptions());
-        d = detections;
+
+        // array of the results
         const displayResults = faceapi.resizeResults(detections, displaySize);
+
+        // selects the canvas context and draws on it
         const ctx = canvas.getContext('2d');
+        //draws the image that was scaned
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        // faceapi.draw.drawDetections(canvas, displayResults);
+        // draws the crying laughing emojis
         drawEmojis(detections, displayResults);
-        console.table(detections)
     });
 }
 
