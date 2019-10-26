@@ -7,14 +7,15 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
-        <script src="face-api.js" defer></script>
+        <script src="javascript/face-api.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.0.0/caman.full.min.js" defer></script>
-        <script src="df.js" defer></script>
+        <script src="javascript/df.js" defer></script>
+        <script src="javascript/darkmode.js" defer></script>
     </head>
     <body>
         <h1>
             Deepfrier.js
-            <svg id="dark-mode">
+            <svg id="dark-mode-toggle">
                 <clipPath id="cut-off-bottom"><rect x="0" y="0" width="50%" height="100%"/></clipPath>
                 <circle cx="50%" cy="50%" r="45%" stroke="white" stroke-width="5%" fill="transparent"/>
                 <circle cx="50%" cy="50%" r="30%" fill="white" clip-path="url(#cut-off-bottom)"/>
