@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +9,14 @@
         <link rel="stylesheet" href="style.css">
         <script src="javascript/face-api.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.0.0/caman.full.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet" defer></script>
         <script src="javascript/df.js" defer></script>
         <script src="javascript/darkmode.js" defer></script>
     </head>
     <body>
         <h1>
-            Deepfrier.js
+            DeepfrierJS
             <svg id="dark-mode-toggle">
                 <clipPath id="cut-off-bottom"><rect x="0" y="0" width="50%" height="100%"/></clipPath>
                 <circle cx="50%" cy="50%" r="45%" stroke="white" stroke-width="5%" fill="transparent"/>
@@ -25,7 +27,7 @@
         <p>To learn more, go take a look at the <a  href="http://github.com/UndergraduateArtificialIntelligenceClub/deepfrier" target="blank">GitHub repository</a>.</p>
         <main>
             <p>Upload a picture with a face!</p>
-            <input type="file" name="" id="input-image" accept="image/*" onchange="faceDetection(loadImage())">
+            <input type="file" name="" id="input-image" accept="image/*" onchange="deepfry()">
             <img src="face.png" alt="face emoji" id="face-emoji">
             <div id="display">
                 <img src="" alt="" id="img">
